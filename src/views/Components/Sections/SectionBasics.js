@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // plugin that creates slider
 // import Slider from 'nouislider';
 // @material-ui/core components
@@ -25,6 +25,7 @@ import Image from '../../../assets/img/example-image.jpg';
 import '../../../assets/css/imagehover.css';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Data from './Data.jsx';
 
 import styles from 'assets/jss/material-kit-react/views/componentsSections/basicsStyle.js';
 
@@ -33,34 +34,17 @@ const useStyles = makeStyles(styles);
 export default function SectionBasics() {
 	const classes = useStyles();
 	const [ checked, setChecked ] = React.useState([ 24, 22 ]);
-	// const [ selectedEnabled, setSelectedEnabled ] = React.useState('b');
-	// const [ checkedA, setCheckedA ] = React.useState(true);
-	// const [ checkedB, setCheckedB ] = React.useState(false);
-	// React.useEffect(() => {
-	//   if (
-	//     !document
-	//       .getElementById("sliderRegular")
-	//       .classList.contains("noUi-target")
-	//   ) {
-	//     Slider.create(document.getElementById("sliderRegular"), {
-	//       start: [40],
-	//       connect: [true, false],
-	//       step: 1,
-	//       range: { min: 0, max: 100 }
-	//     });
-	//   }
-	//   if (
-	//     !document.getElementById("sliderDouble").classList.contains("noUi-target")
-	//   ) {
-	//     Slider.create(document.getElementById("sliderDouble"), {
-	//       start: [20, 60],
-	//       connect: [false, true, false],
-	//       step: 1,
-	//       range: { min: 0, max: 100 }
-	//     });
-	//   }
-	//   return function cleanup() {};
+	// const [ data, setData ] = useState([]);
+
+	// useEffect(() => {
+	// 	fetch('https://server.pstech-usa.com/portfolios').then((res) => res.json).then((data) => {
+	// 		setData([ data ]);
+	// 	});
+	// 	return () => {
+	// 		console.log([ data ]);
+	// 	};
 	// });
+
 	const handleToggle = (value) => {
 		const currentIndex = checked.indexOf(value);
 		const newChecked = [ ...checked ];
@@ -78,96 +62,7 @@ export default function SectionBasics() {
 				<h1 style={{ fontFamily: 'sans-serif', textAlign: 'center', fontSize: '50px', marginTop: '-30px' }}>
 					My Portfolio
 				</h1>
-				<Grid container spacing={1}>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 1</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 2</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 3</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 4</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-				</Grid>
-				<Grid container spacing={1}>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 5</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 6</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 7</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 8</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-				</Grid>
-				<Grid container spacing={1}>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 9</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 10</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 11</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-					<Grid item lg={3} xs={12}>
-						<figure className="imghvr-slide-left">
-							<img src={Image} />
-							<figcaption style={{ opacity: 0.8 }}>Item 12</figcaption>
-							<a href="#" />
-						</figure>
-					</Grid>
-				</Grid>
+				<Data />
 			</Container>
 			{/* <div className={classes.container}>
         <div className={classes.title}>

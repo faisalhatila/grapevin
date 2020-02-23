@@ -65,7 +65,7 @@ export default function Components(props) {
 			{webContent ? (
 				<div>
 					<Header
-						brand="Material Kit React"
+						brand="Grape Vine"
 						rightLinks={<HeaderLinks />}
 						fixed
 						color="transparent"
@@ -75,15 +75,13 @@ export default function Components(props) {
 						}}
 						{...rest}
 					/>
-					<Parallax image={require('assets/img/cover1.jpg')}>
+					<Parallax image={require('assets/img/bg4.jpg')}>
 						<div className={classes.container}>
 							<GridContainer>
 								<GridItem>
 									<div className={classes.brand}>
-										<h1 className={classes.title}>Material Kit React.</h1>
-										<h3 className={classes.subtitle}>
-											A Badass Material-UI Kit based on Material Design.
-										</h3>
+										<h1 className={classes.title}>Grapevine</h1>
+										<h3 className={classes.subtitle}>Everything begins with an idea.</h3>
 									</div>
 								</GridItem>
 							</GridContainer>
@@ -111,7 +109,7 @@ export default function Components(props) {
 					<SectionExamples />
 					<SectionDownload /> */}
 					</div>
-					<Footer />
+					{/* <Footer /> */}
 				</div>
 			) : null}
 		</div>
